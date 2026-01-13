@@ -12,17 +12,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// ✅ Simple and stable metadata
 export const metadata: Metadata = {
-  title: 'My Portfolio',
-  description: 'Frontend Developer Portfolio',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  title: "Neha Yadav | Frontend Developer",
+  description:
+    "Portfolio of Neha Yadav - Frontend Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
+  keywords: [
+    "Neha Yadav",
+    "Frontend Developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Portfolio",
+    "Web Developer",
+    "JavaScript",
+  ],
+  authors: [{ name: "Neha Yadav" }],
+  themeColor: "#4f46e5", // Matches your theme
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
+
+export const viewport = "width=device-width, initial-scale=1, maximum-scale=1";
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body
