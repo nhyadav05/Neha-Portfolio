@@ -1,0 +1,208 @@
+/* Navbar */
+.navContainer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 0.75rem;
+}
+
+.navInner {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0.7rem 0.9rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(14px);
+  border-radius: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 1rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6366f1, #4f46e5, #5b21b6); /* lavender, indigo, and a darker shade of purple */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;}
+
+.logo span {
+  color: #6366f1;
+  margin-left: 4px;
+}
+
+/* Desktop Links */
+.links {
+  display: none;
+  gap: 2rem;
+}
+
+.links a {
+  color: #cbd5f5;
+  font-size: 0.9rem;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.iconBtn {
+  background: rgba(255,255,255,0.06);
+  padding: 0.45rem;
+  border-radius: 0.6rem;
+  color: #a5b4fc;
+}
+
+.hireBtn {
+  background: #4f46e5;
+  color: white;
+  padding: 0.45rem 0.8rem;
+  border-radius: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: none;
+  gap: 0.5rem;
+}
+
+/* Hamburger */
+.menuBtn {
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* Sidebar */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 90;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(16px);
+  padding: 1rem;
+  z-index: 100;
+  transition: left 0.3s ease;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+/* Header */
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, close right */
+  margin-bottom: 1.2rem;
+}
+
+.sidebarLogo {
+  font-size: 1rem;
+  font-weight: 800;
+  color: white;
+}
+
+.sidebarLogo span {
+  background: linear-gradient(135deg, #6366f1, #4f46e5, #5b21b6); /* lavender, indigo, and a darker shade of purple */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.sidebarLogo span:hover {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  transition: background 0.4s ease;
+}
+
+/* Circular Close Button */
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.05);
+}
+
+
+/* Sidebar content */
+.sidebarLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.sidebarLinks a {
+  color: #e0e7ff;
+  font-size: 1rem;
+}
+
+.sidebarActions {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.sidebarActions a {
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  gap: 0.6rem;              /* icon & text spacing */
+  
+  background: #4f46e5;
+  color: white;
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+.sidebarActions a svg {
+  margin-top: -1px; /* optical alignment */
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .links { display: flex; }
+  .hireBtn { display: flex; }
+  .menuBtn,
+  .sidebar,
+  .overlay {
+    display: none;
+  }
+}
+.closeBtn:active {
+  transform: scale(0.95);
+}

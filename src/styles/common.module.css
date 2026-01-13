@@ -1,0 +1,15 @@
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.line {
+    height: 1px;
+    width: 3rem;
+    background-color: #6366f1;
+}
