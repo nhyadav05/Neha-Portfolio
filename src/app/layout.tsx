@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ Simple and stable metadata
+// ✅ Clean metadata without themeColor
 export const metadata: Metadata = {
   title: "Neha Yadav | Frontend Developer",
   description:
@@ -28,7 +28,6 @@ export const metadata: Metadata = {
     "JavaScript",
   ],
   authors: [{ name: "Neha Yadav" }],
-  themeColor: "#4f46e5", // Matches your theme
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -36,6 +35,7 @@ export const metadata: Metadata = {
   },
 };
 
+// ✅ Must be exported separately in Next.js 16+
 export const viewport = "width=device-width, initial-scale=1, maximum-scale=1";
 
 export default function RootLayout({
@@ -43,6 +43,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Add theme color manually */}
+        <meta name="theme-color" content="#4f46e5" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
