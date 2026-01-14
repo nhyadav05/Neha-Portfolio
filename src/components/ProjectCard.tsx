@@ -1,19 +1,22 @@
 "use client";
 import { useState } from 'react';
-import Image from 'next/image';
 import { Project } from '@/types';
 import { ChevronDown } from 'lucide-react';
 import styles from '@/styles/ProjectCard.module.css';
 
 interface ProjectCardProps {
     project: Project;
+    index?: number;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className={styles.card}>
+        <div 
+            className={styles.card} 
+            style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}
+        >
             {/* Parent must be relative for 'fill' to work */}
             <div className={styles.imageWrapper} style={{ position: 'relative' }}>
                 {project.link ? (

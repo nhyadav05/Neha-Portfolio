@@ -1,32 +1,53 @@
+"use client"
+
+
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Experience from '@/components/Experience';
+import EducationSection from '@/components/Education';
 import ProjectCard from '@/components/ProjectCard';
-import { Project } from '@/types'; // Import the Project interface
+import { Project } from '@/types';
 import styles from '../styles/page.module.css';
 import { DATA } from '@/data/portfolioData';
 import Skills from '@/components/Skills';
+import Contact from '@/components/Contact';
+import useScrollReveal from '@/hooks/useScrollReveal';
+
 
 export default function Home() {
+    useScrollReveal();
+  
   return (
-   <main className={styles.mainWrapper}>
+    <main className={styles.mainWrapper}>
+      {/*  Global Background Blobs */}
+      <div className={styles.blob1}></div>
+      <div className={styles.blob2}></div>
+
+      {/* Content */}
       <Navbar />
       <Hero />
       <Experience />
-      
-      {/* Skills & Education Section */}
+      <EducationSection />
       <Skills />
 
       <section id="projects" className={styles.projectsContainer}>
-        <h3 className={styles.sectionTitle}>
-        <span className={styles.line}></span> Projects
-      </h3>
+        <h3 className={`${styles.sectionTitle} reveal`}>
+          <span className={styles.line}></span> Projects
+        </h3>
+
         <div className={styles.projectsGrid}>
-          {DATA.projects.map((project: Project) => (
-            <ProjectCard key={project.id} project={project} />
+          {DATA.projects.map((project: Project, index: number) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+            />
           ))}
         </div>
       </section>
+
+      <Contact />
     </main>
   );
 }
+

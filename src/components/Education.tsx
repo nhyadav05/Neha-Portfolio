@@ -1,15 +1,14 @@
 "use client"
 
-import React, { useRef,  useEffect } from 'react';
-import styles from '@/styles/Experience.module.css';
-import { Experience as ExperienceType } from '@/types';
+
+import React, { useEffect} from 'react';
+import styles from '@/styles/Education.module.css';
+import { Education as EducationType } from '@/types';
 import { DATA } from '@/data/portfolioData';
 import useScrollReveal from '@/hooks/useScrollReveal';
 
-export default function Experience() {
-  const sectionRef = useRef<HTMLElement>(null);
+export default function EducationSection() {
   useScrollReveal();
-
 
   useEffect(() => {
     const handleMouseMoveGlobal = (e: MouseEvent) => {
@@ -23,7 +22,7 @@ export default function Experience() {
       });
     };
 
-    const section = sectionRef.current;
+    const section = document.getElementById('education');
     if (section) {
       section.addEventListener('mousemove', handleMouseMoveGlobal);
     }
@@ -36,23 +35,25 @@ export default function Experience() {
   }, []);
 
   return (
-    <section id="experience" className={styles.section} ref={sectionRef}>
+    <section id="education" className={styles.section}>
       <h3 className={`${styles.sectionTitle} reveal`}>
-        <span className={styles.line}></span> Professional Journey
+        <span className={styles.line}></span> Education
       </h3>
 
       <div className={styles.grid}>
-        {DATA.experience.map((exp: ExperienceType, index: number) => (
+        {DATA.education.map((edu: EducationType, index: number) => (
           <div 
             key={index} 
             className={styles.card}
           >
             <div className={styles.cardHeader}>
-              <p className={styles.company}>{exp.company}</p>
-              <span className={styles.date}>{exp.date}</span>
+              <p className={styles.degree}>{edu.degree}</p>
+              <span className={styles.year}>{edu.year}</span>
             </div>
-            <h4 className={styles.role}>{exp.role}</h4>
-            <p className={styles.desc}>{exp.desc}</p>
+            <p className={styles.school}>{edu.school}</p>
+            {edu.location && (
+              <p className={styles.location}>{edu.location}</p>
+            )}
           </div>
         ))}
       </div>

@@ -27,6 +27,12 @@ export interface Language {
     level: string;
 }
 
+export interface SocialLink {
+    platform: 'linkedin' | 'github' | 'gmail' | 'instagram' | 'twitter';
+    url: string;
+    label: string;
+}
+
 export interface PortfolioData {
     name: string;
     role: string;
@@ -37,4 +43,5 @@ export interface PortfolioData {
     experience: Experience[];
     education: Education[];
     projects: Project[];
+    socialLinks: SocialLink[];
 }

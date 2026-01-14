@@ -193,7 +193,7 @@ role: "Frontend Developer",
     img: "/Purehug-SFA.png",
     link: "https://play.google.com/store/apps/details?id=com.purehug.sfa&hl=en_IN"
   },
-  {
+    {
     id: 10,
     title: "Intellimax",
     category: "Corporate Website",
@@ -203,6 +203,23 @@ role: "Frontend Developer",
     img: "/Intellimax.png",
     link: "https://intellimax.io/"
   }
-]
+],
+  socialLinks: [
+    {
+      platform: 'linkedin',
+      url: 'https://www.linkedin.com/in/neha-yadav-57744a242/',
+      label: 'LinkedIn'
+    },
+    {
+      platform: 'github',
+      url: 'https://github.com/nhyadav05',
+      label: 'GitHub'
+    },
+    {
+      platform: 'gmail',
+      url: 'mailto:nehainduyadav@gmail.com',
+      label: 'Gmail'
+    }
+  ]
 
 };

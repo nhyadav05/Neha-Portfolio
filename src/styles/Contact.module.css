@@ -1,0 +1,232 @@
+/* ===============================
+   Contact Section
+================================ */
+
+.contactSection {
+    position: relative;
+    padding: 6rem 1.5rem 5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+}
+
+/* ===============================
+   Section Title
+================================ */
+
+.sectionTitle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.line {
+    width: 3rem;
+    height: 1px;
+    background: #6366f1;
+}
+
+/* ===============================
+   Text Content
+================================ */
+
+.contactWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.textContent {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .heading {
+        font-size: 3.5rem;
+    }
+}
+
+.gradientText {
+    display: block;
+    background: linear-gradient(135deg, #818cf8, #c084fc, #34d399);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #94a3b8;
+}
+
+/* ===============================
+   Social Links Layout
+================================ */
+
+/* Mobile: stacked */
+.socialLinks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 520px;
+    margin: 3rem auto 0;
+    width: 100%;
+}
+
+/* Desktop: side by side */
+@media (min-width: 768px) {
+    .socialLinks {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+        gap: 1.5rem;
+    }
+}
+
+/* ===============================
+   Social Card
+================================ */
+
+.socialLink {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: .5rem;
+    border-radius: 1.25rem;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(
+        145deg,
+        rgba(30, 41, 59, 0.6),
+        rgba(15, 23, 42, 0.85)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+}
+
+/* Glow overlay */
+.socialLink::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        circle at top left,
+        rgba(99, 102, 241, 0.35),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.socialLink:hover::before {
+    opacity: 1;
+}
+
+.socialLink:hover {
+    transform: translateY(-6px);
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.25);
+}
+
+/* ===============================
+   Icon
+================================ */
+
+.iconWrapper {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.socialLink:hover .iconWrapper {
+    transform: scale(1.1);
+    background: rgba(99, 102, 241, 0.22);
+}
+
+.socialIcon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+/* ===============================
+   Label + Arrow
+================================ */
+
+.socialLabel {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+.arrowWrapper {
+    margin-left: auto;
+    font-size: 1.5rem;
+    color: #818cf8;
+    transition: transform 0.3s ease;
+}
+
+.socialLink:hover .arrowWrapper {
+    transform: translateX(6px);
+}
+
+/* ===============================
+   Footer
+================================ */
+
+.footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* ===============================
+   Mobile Tweaks
+================================ */
+
+@media (max-width: 640px) {
+    .iconWrapper {
+        width: 42px;
+        height: 42px;
+    }
+
+    .socialIcon {
+        width: 20px;
+        height: 20px;
+    }
+}
+

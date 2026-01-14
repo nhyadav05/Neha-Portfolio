@@ -144,7 +144,7 @@
 }
 .highlight {
   font-weight: 700;
-  background: linear-gradient(135deg, #6366f1, #4f46e5, #5b21b6); /* ✅ */
+  background: linear-gradient(135deg, #6366f1, #4f46e5, #5b21b6);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
