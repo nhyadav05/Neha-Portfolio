@@ -24,6 +24,8 @@ export default function Navbar() {
             <Link href="#experience">Experience</Link>
             <Link href="#projects">Projects</Link>
             <Link href="#skills">Stack</Link>
+            <Link href="#contact">Contact</Link>
+
           </div>
 
           {/* RIGHT */}
@@ -82,6 +84,7 @@ export default function Navbar() {
           <Link href="#experience" onClick={() => setOpen(false)}>Experience</Link>
           <Link href="#projects" onClick={() => setOpen(false)}>Projects</Link>
           <Link href="#skills" onClick={() => setOpen(false)}>Stack</Link>
+          <Link href="#contact" onClick={() => setOpen(false)}>Contact</Link>
         </nav>
 
         <div className={styles.sidebarActions}>
