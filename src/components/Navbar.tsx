@@ -29,9 +29,9 @@ export default function Navbar() {
           {/* RIGHT */}
           <div className={styles.actions}>
             {/* Desktop actions */}
-            <a href="tel:+918964850575" className={styles.iconBtn}>
+            {/* <a href="tel:+918964850575" className={styles.iconBtn}>
               <Phone size={16} />
-            </a>
+            </a> */}
 
 
             <a href="mailto:nehainduyadav@gmail.com" className={styles.hireBtn}>
@@ -85,10 +85,10 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.sidebarActions}>
-          <a href="tel:+918964850575">
+          {/* <a href="tel:+918964850575">
             <Phone size={16} />
             <span>Call Me</span>
-          </a>
+          </a> */}
           <a href="mailto:nehainduyadav@gmail.com">
             <Mail size={16} />
             <span>Hire Me</span>
