@@ -6,92 +6,33 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    position: relative;
 }
 
 .line {
     height: 1px;
     width: 3rem;
     background-color: #6366f1;
-    position: relative;
-    overflow: hidden;
-}
-
-.line::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(90deg, transparent, #818cf8, transparent);
-    animation: shimmerLine 2s infinite;
-}
-
-@keyframes shimmerLine {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
 }
 
 .mainWrapper {
-    position: relative;
     background-color: #020617;
     min-height: 100vh;
     color: white;
-    overflow: hidden;
-    width: 100%;
-}
-
-.mainWrapper > *:not(.blob1):not(.blob2) {
-    position: relative;
-    z-index: 2;
-}
-
-
-/* ===============================
-   Background Blobs
-================================ */
-
-.blob1,
-.blob2 {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.18;
-    z-index: 1;
-}
-
-
-.blob1 {
-    width: 420px;
-    height: 420px;
-    top: -120px;
-    right: -120px;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    animation: float 8s ease-in-out infinite;
-}
-
-.blob2 {
-    width: 320px;
-    height: 320px;
-    bottom: -80px;
-    left: -80px;
-    background: linear-gradient(135deg, #34d399, #10b981);
-    animation: float 10s ease-in-out infinite reverse;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .projectsContainer {
     max-width: 80rem;
     margin: 0 auto;
-    padding: 0 1rem 5rem;
-    overflow-x: hidden;
+    padding: 0 1rem 5rem; /* Reduced padding from 1.5rem to 1rem */
 }
 
 .projectsGrid {
     display: grid;
-    grid-template-columns: 1fr;
+    /* Force 1 column on very small screens, 
+       then auto-fill when there is enough space */
+    grid-template-columns: 1fr; 
     gap: 1.5rem;
-    overflow-x: hidden;
 }
 
 @media (min-width: 640px) {
@@ -116,4 +57,3 @@
 .projectsGrid {
     animation: fadeInUp 0.8s ease forwards;
 }
-

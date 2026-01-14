@@ -1,9 +1,7 @@
-"use client"
 import React from 'react';
 import styles from '@/styles/Contact.module.css';
 import { DATA } from '@/data/portfolioData';
 import Image from 'next/image';
-import useScrollReveal from '@/hooks/useScrollReveal';
 
 const socialIcons: Record<string, string> = {
   linkedin: '/linkedin.svg',
@@ -14,7 +12,6 @@ const socialIcons: Record<string, string> = {
 };
 
 export default function Contact() {
-  useScrollReveal();
   
   return (
     <section id="contact" className={styles.contactSection}>

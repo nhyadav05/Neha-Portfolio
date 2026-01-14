@@ -3,11 +3,9 @@
 import React, { useRef } from 'react';
 import styles from '@/styles/Skills.module.css';
 import { DATA } from '@/data/portfolioData';
-import useScrollReveal from '@/hooks/useScrollReveal';
 
 export default function Skills() {
     const sectionRef = useRef<HTMLElement>(null);
-    useScrollReveal();
 
     return (
         <section id="skills" className={styles.section} ref={sectionRef}>

@@ -1,13 +1,11 @@
-"use client"
+
 
 import React from 'react';
 import Image from 'next/image';
 import styles from '@/styles/Hero.module.css';
 import { DATA } from '@/data/portfolioData';
-import useScrollReveal from '@/hooks/useScrollReveal';
 
 export default function Hero() {
-  useScrollReveal();
 
   return (
     <section className={styles.heroSection}>

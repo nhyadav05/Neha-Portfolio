@@ -4,11 +4,9 @@ import React, { useRef,  useEffect } from 'react';
 import styles from '@/styles/Experience.module.css';
 import { Experience as ExperienceType } from '@/types';
 import { DATA } from '@/data/portfolioData';
-import useScrollReveal from '@/hooks/useScrollReveal';
 
 export default function Experience() {
   const sectionRef = useRef<HTMLElement>(null);
-  useScrollReveal();
 
 
   useEffect(() => {

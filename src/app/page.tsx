@@ -1,4 +1,3 @@
-"use client"
 
 
 import Navbar from '@/components/Navbar';
@@ -11,11 +10,9 @@ import styles from '../styles/page.module.css';
 import { DATA } from '@/data/portfolioData';
 import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
-import useScrollReveal from '@/hooks/useScrollReveal';
 
 
 export default function Home() {
-    useScrollReveal();
   
   return (
     <main className={styles.mainWrapper}>

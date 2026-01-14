@@ -5,10 +5,8 @@ import React, { useEffect} from 'react';
 import styles from '@/styles/Education.module.css';
 import { Education as EducationType } from '@/types';
 import { DATA } from '@/data/portfolioData';
-import useScrollReveal from '@/hooks/useScrollReveal';
 
 export default function EducationSection() {
-  useScrollReveal();
 
   useEffect(() => {
     const handleMouseMoveGlobal = (e: MouseEvent) => {
