@@ -23,10 +23,9 @@ export default function Home() {
       {/* Content */}
       <Navbar />
       <Hero />
+      <Skills />
       <Experience />
       <EducationSection />
-      <Skills />
-
       <section id="projects" className={styles.projectsContainer}>
         <h3 className={`${styles.sectionTitle} reveal`}>
           <span className={styles.line}></span> Projects
