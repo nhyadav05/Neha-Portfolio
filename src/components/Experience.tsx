@@ -3,7 +3,7 @@
 import React, { useRef,  useEffect } from 'react';
 import styles from '@/styles/Experience.module.css';
 import { Experience as ExperienceType } from '@/types';
-import { DATA } from '@/data/portfolioData';
+import { DATA, formatDate, getDateRange, calculateDuration } from '@/data/portfolioData';
 
 export default function Experience() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -47,7 +47,9 @@ export default function Experience() {
           >
             <div className={styles.cardHeader}>
               <p className={styles.company}>{exp.company}</p>
-              <span className={styles.date}>{exp.date}</span>
+              <span className={styles.date}>
+                {getDateRange(exp.startDate, exp.endDate)} • {calculateDuration(exp.startDate, exp.endDate)}
+              </span>
             </div>
             <h4 className={styles.role}>{exp.role}</h4>
             <p className={styles.desc}>{exp.desc}</p>

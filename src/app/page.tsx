@@ -10,6 +10,7 @@ import styles from '../styles/page.module.css';
 import { DATA } from '@/data/portfolioData';
 import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 
 export default function Home() {
@@ -43,6 +44,7 @@ export default function Home() {
       </section>
 
       <Contact />
+      {/* <Footer /> */}
     </main>
   );
 }

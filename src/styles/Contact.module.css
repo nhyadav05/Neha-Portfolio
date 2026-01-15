@@ -5,6 +5,7 @@
 .contactSection {
     position: relative;
     padding: 6rem 1.5rem 5rem;
+    /* padding: 1rem 1.5rem 1rem; */
     max-width: 80rem;
     margin: 0 auto;
     overflow: hidden;

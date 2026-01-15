@@ -11,8 +11,10 @@ export interface Project {
 export interface Experience {
     role: string;
     company: string;
-    date: string;
+    startDate: string; // Format: "YYYY-MM"
+    endDate: string | null; // null means current/present position
     desc: string;
+    date?: string; // Optional date string for your data
 }
 
 export interface Education {

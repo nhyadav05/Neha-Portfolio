@@ -3,9 +3,10 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from '@/styles/Hero.module.css';
-import { DATA } from '@/data/portfolioData';
+import { DATA, calculateTotalExperience } from '@/data/portfolioData';
 
 export default function Hero() {
+  const totalExperience = calculateTotalExperience(DATA.experience);
 
   return (
     <section className={styles.heroSection}>
@@ -17,7 +18,7 @@ export default function Hero() {
               <span className={styles.pingPulse}></span>
               <span className={styles.pingMain}></span>
             </span>
-            3 YEARS OF FRONTEND EXCELLENCE
+            {totalExperience.toUpperCase()} OF FRONTEND EXCELLENCE
           </div>
 
           <h2 className={`${styles.title} animate-fade-in-up stagger-delay-1`}>
@@ -27,12 +28,12 @@ export default function Hero() {
 
           {/* <p className={styles.bio}>{DATA.bio}</p> */}
           <p className={`${styles.bio} animate-fade-in-up stagger-delay-2`}>
-            {DATA.bio.split("3 years").map((part, index, arr) => {
+            {DATA.bio.split(totalExperience).map((part, index, arr) => {
               if (index < arr.length - 1) {
                 return (
                   <React.Fragment key={index}>
                     {part}
-                    <span className={styles.highlight}>3 years</span>
+                    <span className={styles.highlight}>{totalExperience}</span>
                   </React.Fragment>
                 );
               }

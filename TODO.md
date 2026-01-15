@@ -1,54 +1,41 @@
-# Navbar Enhancement Task
+# Dynamic Experience Implementation Plan
+
+## Information Gathered:
+- Current experience dates are hardcoded as static strings in `src/data/portfolioData.ts`
+- Example: `date: "2025 Jun – Present"`
+- The `Experience.tsx` component displays these static dates
+- Need to make experience duration calculate automatically
 
 ## Plan:
-1. Enhance Navbar UI with better visual weight
-2. Add scroll-based background transitions
-3. Improve animations (hover effects, glow, scale)
-4. Enable "Hire Me" button on desktop
-5. Add active link indicator
-6. Enhance sidebar animations
+
+### 1. Update `src/types/index.ts` - ✅ Pending
+- Modify the `Experience` interface to use `startDate` and `endDate` fields
+- Keep the interface flexible to support dynamic calculation
+
+### 2. Update `src/data/portfolioData.ts` - ✅ Pending
+- Change from static date strings to structured date objects
+- Use ISO date format (YYYY-MM-DD) for startDate
+- Set endDate as null for current positions
+- Add a helper function to calculate experience duration
+- Format dates dynamically for display
+
+### 3. Update `src/components/Experience.tsx` - ✅ Pending
+- Modify the component to use dynamic date calculation
+- Display formatted date range (e.g., "Jun 2024 – Jun 2025")
+- Show total experience duration (e.g., "1 year")
+
+## Follow-up Steps:
+- Test the dynamic calculation
+- Verify date formatting looks correct
+- Ensure "Present" is shown for current positions
+
+## Files to be edited:
+1. `src/types/index.ts`
+2. `src/data/portfolioData.ts`
+3. `src/components/Experience.tsx`
 
 ## Progress:
-- [x] Read current Navbar component and styles
-- [x] Create enhancement plan
-- [x] Get user approval
-- [x] Update Navbar.tsx with scroll state and enhanced structure
-- [x] Update Navbar.module.css with complete styling overhaul
-
-## Completed Enhancements:
-
-### Navbar.tsx:
-- Added scroll state tracking for dynamic background
-- Added active section detection based on scroll position
-- Improved mobile menu with body scroll prevention
-- Enhanced sidebar links with icons (Briefcase, FolderCode, Layers) and descriptions
-
-### Navbar.module.css:
-- Increased navbar height and visual weight
-- Scroll-based background opacity transition
-- Enhanced "Hire Me" button with gradient, glow effect on hover
-- Active link indicator (underlined)
-- Improved desktop navigation with hover animations
-- **Professional Sidebar Links:**
-  - Card-style layout with subtle border and background
-  - Icon wrapper with gradient hover effect
-  - Title and description text layout
-  - Smooth slide animation on hover
-  - Glowing box shadow on hover
-
-### Animation Features Added to All Sections:
-- **useScrollReveal hook** integrated into all sections:
-  - Hero.tsx, Experience.tsx, Education.tsx, Skills.tsx, Contact.tsx
-  - Reveal animations on scroll with fade-up effect
-  
-- **Mouse tracking hover effects** added to:
-  - Experience cards
-  - Education cards
-  
-- **Project Cards enhanced:**
-  - Animated gradient border on hover
-  - Glow pulse animation
-  - Smooth scale and shadow effects
-
-- **Section titles** now have `reveal` class for scroll animations
+- [x] Step 1: Update types/index.ts
+- [x] Step 2: Update data/portfolioData.ts
+- [x] Step 3: Update components/Experience.tsx
 
