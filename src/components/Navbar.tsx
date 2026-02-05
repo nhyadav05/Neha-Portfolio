@@ -1,11 +1,14 @@
 "use client";
 
 import React, { useState } from 'react';
+import useScrollReveal from '@/hooks/useScrollReveal';
 import Link from 'next/link';
-import { Phone, Mail, Menu, X } from 'lucide-react';
+import { Mail, Menu, X } from 'lucide-react';
 import styles from '@/styles/Navbar.module.css';
 
 export default function Navbar() {
+  // Initialize global scroll-reveal observer (runs in client components)
+  useScrollReveal();
   const [open, setOpen] = useState(false);
 
   return (
