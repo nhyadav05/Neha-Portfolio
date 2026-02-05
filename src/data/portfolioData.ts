@@ -1,4 +1,4 @@
-import { PortfolioData, Project } from '../types';
+import { PortfolioData } from '../types';
 
 // Helper function to format date from YYYY-MM to "Mon YYYY"
 export function formatDate(dateStr: string): string {

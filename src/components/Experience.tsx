@@ -3,7 +3,7 @@
 import React, { useRef,  useEffect } from 'react';
 import styles from '@/styles/Experience.module.css';
 import { Experience as ExperienceType } from '@/types';
-import { DATA, formatDate, getDateRange, calculateDuration } from '@/data/portfolioData';
+import { DATA, getDateRange, calculateDuration } from '@/data/portfolioData';
 
 export default function Experience() {
   const sectionRef = useRef<HTMLElement>(null);
