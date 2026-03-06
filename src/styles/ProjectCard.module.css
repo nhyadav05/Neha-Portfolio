@@ -1,7 +1,7 @@
 .card {
-    background: rgba(30, 41, 59, 0.4);
+    background: var(--card-bg);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
     border-radius: 2.5rem;
     padding: 1.25rem;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -19,12 +19,12 @@
 }
 
 .card:hover {
-    border-color: #6366f1;
-    background: rgba(30, 41, 59, 0.6);
+    border-color: var(--accent);
+    background: var(--surface-elevated);
     transform: translateX(5px) translateY(-5px);
-    box-shadow: 
-        0 20px 40px -10px rgba(99, 102, 241, 0.3),
-        0 0 0 1px rgba(99, 102, 241, 0.1);
+    box-shadow:
+        0 20px 40px -10px rgba(99, 102, 241, 0.25),
+        0 0 0 1px rgba(99, 102, 241, 0.12);
 }
 
 @keyframes gradientRotate {
@@ -95,13 +95,13 @@
 }
 
 .techTags span {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--theme-toggle-bg);
     padding: 0.25rem 0.6rem;
     border-radius: 0.5rem;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #cbd5e1;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--foreground);
+    border: 1px solid var(--card-border);
     transition: all 0.3s ease;
 }
 
@@ -116,7 +116,7 @@
 /* Expandable Description Logic */
 .description {
     font-size: 0.9rem;
-    color: #94a3b8;
+    color: var(--muted);
     line-height: 1.6;
     transition: max-height 0.5s ease;
 }
@@ -150,7 +150,7 @@
 }
 
 .expandBtn:hover {
-    color: #fff;
+    color: var(--foreground);
 }
 
 .rotate {
@@ -161,5 +161,5 @@
 .title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--section-title);
 }

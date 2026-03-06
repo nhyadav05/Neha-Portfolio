@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "@/context/ThemeContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,7 +13,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ Clean metadata without themeColor
 export const metadata: Metadata = {
   title: "Neha Yadav | Frontend Developer",
   description:
@@ -35,22 +35,34 @@ export const metadata: Metadata = {
   },
 };
 
-// ✅ Must be exported separately in Next.js 16+
 export const viewport = "width=device-width, initial-scale=1, maximum-scale=1";
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Add theme color manually */}
-        <meta name="theme-color" content="#4f46e5" />
+        <meta name="theme-color" content="#0f172a" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var theme = localStorage.getItem('neha-portfolio-theme');
+                var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                var value = theme === 'light' || theme === 'dark' ? theme : (prefersLight ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-theme', value);
+              })();
+            `,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -7,23 +7,25 @@
 .sectionTitle {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--section-title);
     margin-bottom: 2.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
+    transition: color 0.25s ease;
 }
 
 .line {
-    height: 1px;
+    height: 2px;
     width: 3rem;
-    background-color: #6366f1;
+    background: linear-gradient(90deg, var(--accent), #8b5cf6);
+    border-radius: 1px;
 }
 
 .glassCard {
-    background: rgba(30, 41, 59, 0.4);
+    background: var(--card-bg);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
     border-radius: 2rem;
     padding: 2rem;
     transition: all 0.4s ease;
@@ -52,10 +54,10 @@
 }
 
 .glassCard:hover {
-    background: rgba(30, 41, 59, 0.6);
-    box-shadow: 
-        0 20px 40px -10px rgba(99, 102, 241, 0.3),
-        0 0 0 1px rgba(99, 102, 241, 0.1);
+    background: var(--surface-elevated);
+    box-shadow:
+        0 20px 40px -10px rgba(99, 102, 241, 0.25),
+        0 0 0 1px rgba(99, 102, 241, 0.12);
     transform: translateY(-2px);
 }
 

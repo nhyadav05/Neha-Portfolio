@@ -1,51 +1,54 @@
 "use client";
 
-import React, { useState } from 'react';
-import useScrollReveal from '@/hooks/useScrollReveal';
-import Link from 'next/link';
-import { Mail, Menu, X } from 'lucide-react';
-import styles from '@/styles/Navbar.module.css';
+import React, { useState } from "react";
+import useScrollReveal from "@/hooks/useScrollReveal";
+import Link from "next/link";
+import { Mail, Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/context/ThemeContext";
+import styles from "@/styles/Navbar.module.css";
 
 export default function Navbar() {
-  // Initialize global scroll-reveal observer (runs in client components)
   useScrollReveal();
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
       <nav className={styles.navContainer}>
         <div className={styles.navInner}>
-          {/* LEFT: Logo */}
           <div className={styles.logo}>
-            <div className={styles.sidebarLogo}>
-              <span>Neha</span><span>Yadav</span>
-            </div>
+            <Link href="#" className={styles.logoLink}>
+              <span>Neha</span>
+              <span>Yadav</span>
+            </Link>
           </div>
 
-          {/* CENTER (Desktop only) */}
           <div className={styles.links}>
             <Link href="#experience">Experience</Link>
+            <Link href="#education">Education</Link>
             <Link href="#projects">Projects</Link>
             <Link href="#skills">Stack</Link>
             <Link href="#contact">Contact</Link>
 
           </div>
 
-          {/* RIGHT */}
           <div className={styles.actions}>
-            {/* Desktop actions */}
-            {/* <a href="tel:+918964850575" className={styles.iconBtn}>
-              <Phone size={16} />
-            </a> */}
-
-
+            <button
+              type="button"
+              className={styles.themeToggle}
+              onClick={toggleTheme}
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              title={theme === "dark" ? "Light mode" : "Dark mode"}
+            >
+              <span className={styles.themeIconWrap}>
+                <Sun className={styles.themeIconSun} size={18} />
+                <Moon className={styles.themeIconMoon} size={18} />
+              </span>
+            </button>
             <a href="mailto:nehainduyadav@gmail.com" className={styles.hireBtn}>
               <Mail size={16} />
               <span>Hire Me</span>
             </a>
-
-
-            {/* Mobile Hamburger */}
             <button
               className={styles.menuBtn}
               onClick={() => setOpen(true)}
@@ -85,10 +88,25 @@ export default function Navbar() {
 
         <nav className={styles.sidebarLinks}>
           <Link href="#experience" onClick={() => setOpen(false)}>Experience</Link>
+          <Link href="#education" onClick={() => setOpen(false)}>Education</Link>
           <Link href="#projects" onClick={() => setOpen(false)}>Projects</Link>
           <Link href="#skills" onClick={() => setOpen(false)}>Stack</Link>
           <Link href="#contact" onClick={() => setOpen(false)}>Contact</Link>
         </nav>
+        <div className={styles.sidebarThemeRow}>
+          <span className={styles.sidebarThemeLabel}>Theme</span>
+          <button
+            type="button"
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            <span className={styles.themeIconWrap}>
+              <Sun className={styles.themeIconSun} size={18} />
+              <Moon className={styles.themeIconMoon} size={18} />
+            </span>
+          </button>
+        </div>
 
         <div className={styles.sidebarActions}>
           {/* <a href="tel:+918964850575">

@@ -1,30 +1,62 @@
 .sectionTitle {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--section-title);
     margin-bottom: 2.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
+    transition: color 0.25s ease;
 }
 
 .line {
-    height: 1px;
+    height: 2px;
     width: 3rem;
-    background-color: #6366f1;
+    background: linear-gradient(90deg, var(--accent), #8b5cf6);
+    border-radius: 1px;
 }
 
 .mainWrapper {
-    background-color: #020617;
+    position: relative;
+    background-color: var(--background);
     min-height: 100vh;
-    color: white;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    color: var(--foreground);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Background blobs */
+.blob1,
+.blob2 {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: var(--blob-opacity);
+    transition: opacity 0.4s ease;
+}
+
+.blob1 {
+    width: min(70vw, 500px);
+    height: min(70vw, 500px);
+    top: -15%;
+    right: -10%;
+    background: radial-gradient(circle, #6366f1 0%, #4f46e5 40%, transparent 70%);
+}
+
+.blob2 {
+    width: min(60vw, 400px);
+    height: min(60vw, 400px);
+    bottom: -10%;
+    left: -5%;
+    background: radial-gradient(circle, #8b5cf6 0%, #6366f1 40%, transparent 70%);
 }
 
 .projectsContainer {
     max-width: 80rem;
     margin: 0 auto;
-    padding: 0 1rem 5rem; /* Reduced padding from 1.5rem to 1rem */
+    padding: 0 1rem 5rem;
 }
 
 .projectsGrid {
