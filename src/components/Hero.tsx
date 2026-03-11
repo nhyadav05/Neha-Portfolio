@@ -47,8 +47,8 @@ export default function Hero() {
             </a>
 
             <a
-              href="/NehaYadav-CV.pdf"
-              download="NehaYadav-CV.pdf"
+              href="/Neha_Yadav_CV.pdf"
+              download="Neha_Yadav_CV.pdf"
               className={styles.secondaryBtn}
             >
               Download CV
