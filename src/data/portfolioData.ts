@@ -87,8 +87,8 @@ export const DATA: PortfolioData = {
   ],
   experience: [
     { role: "React JS Developer", company: "Tekzee Technologies Pvt. Ltd.", startDate: "2025-06", endDate: null, desc: "Building dynamic and responsive web applications using React.js, TypeScript, and Next.js." },
-    { role: "React JS Developer", company: "Stack Infinite Pvt Ltd", startDate: "2024-06", endDate: "2025-06", desc: "Developed modern, high-performance platforms using Vite.js and TypeScript." },
-    { role: "React JS Developer", company: "Quintus Tech Pvt Ltd", startDate: "2024-04", endDate: "2024-06", desc: "Focused on React.js development with state management and API integration." },
+    { role: "React JS Developer", company: "Stack Infinite Pvt Ltd", startDate: "2024-04", endDate: "2025-06", desc: "Developed modern, high-performance platforms using Vite.js and TypeScript." },
+    // { role: "React JS Developer", company: "Quintus Tech Pvt Ltd", startDate: "2024-04", endDate: "2024-06", desc: "Focused on React.js development with state management and API integration." },
     { role: "React JS Developer", company: "Zolute Technology & Consulting Pvt. Ltd.", startDate: "2022-09", endDate: "2023-09", desc: "Built scalable frontend solutions with focus on performance and clean code." }
   ],
   education: [
